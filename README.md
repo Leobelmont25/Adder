@@ -21,7 +21,7 @@ This project demonstrates the simulation and verification of a VHDL adder using 
 
 ## 🛠️ Prerequisite
 
-- 
+- The project was developed using WSL and IIC-OSIC tools. Available (https://github.com/iic-jku/IIC-OSIC-TOOLS)
 
 Make sure you have the following tools installed in your environment (preferably via WSL):
 
@@ -30,15 +30,27 @@ Make sure you have the following tools installed in your environment (preferably
 
 ---
 
-## 📁 Estrutura do Projeto
+## 📁 Project Structure
 
-Execute os seguintes comandos para analisar os arquivos fonte em VHDL:
+Run the following commands to analyze the VHDL source files:
 
 ```bash
+
 ghdl -a full_adder.vhdl
 ghdl -a adder.vhdl
 
+// Testbenches Analysis
 ghdl -a full_adder_tb.vhdl
 ghdl -a adder_tb.vhdl
 
+// Preparation of Test Units
+ghdl -e full_adder_tb
+ghdl -e adder_tb
 
+// Running Simulations and Generating Waveforms
+ghdl -r full_adder_tb --wave=full_adder_tb.ghw
+ghdl -r adder_tb --wave=adder_tb.ghw
+
+// Viewing Waveforms
+gtkwave full_adder_tb.ghw
+gtkwave adder_tb.ghw

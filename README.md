@@ -51,4 +51,12 @@ ghdl -e adder_tb
 ghdl -r full_adder_tb --wave=full_adder_tb.ghw
 ghdl -r adder_tb --wave=adder_tb.ghw
 
+```
+# Viewing Waveforms
 
+Abra os arquivos .ghw no GTKWave para inspecionar os sinais simulados:
+
+```bash
+
+gtkwave ./waves/full_adder_tb.ghw
+gtkwave ./waves/adder_tb.ghw

@@ -51,6 +51,4 @@ ghdl -e adder_tb
 ghdl -r full_adder_tb --wave=full_adder_tb.ghw
 ghdl -r adder_tb --wave=adder_tb.ghw
 
-// Viewing Waveforms
-gtkwave full_adder_tb.ghw
-gtkwave adder_tb.ghw
+

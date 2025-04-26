@@ -115,6 +115,7 @@ openlane config.json
 openlane --last-run --flow openinopenroad config.json
 ````
 # Screenshot
-![image](https://github.com/user-attachments/assets/81a90054-0708-423a-aad4-51f933432e91)
+![image](https://github.com/user-attachments/assets/f0fb376d-802a-41bb-82fd-38b58f8e36b3)
+
 
 

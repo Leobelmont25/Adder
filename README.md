@@ -13,7 +13,7 @@ IV - Finally, the entire project structure, including code files, automation scr
 
 # Simulations
 
-# VHDL Adder - Simulation and Verification using GHDL + GTKWave
+# 1. VHDL Adder - Simulation and Verification using GHDL + GTKWave
 
 This project demonstrates the simulation and verification of a VHDL adder using open-source tools such as **GHDL** and **GTKWave**. Below are described the steps to perform the analysis, simulation and visualization of the waveforms.
 
@@ -54,9 +54,31 @@ ghdl -r adder_tb --wave=adder_tb.ghw
 ```
 # Viewing Waveforms
 
-Abra os arquivos .ghw no GTKWave para inspecionar os sinais simulados:
-
+Open the .ghw files in GTKWave to inspect the simulated signals:
 ```bash
 
 gtkwave ./waves/full_adder_tb.ghw
 gtkwave ./waves/adder_tb.ghw
+
+````
+# 🔄 VHDL para Verilog
+
+Este documento descreve o processo de conversão de um projeto escrito em VHDL para Verilog utilizando ferramentas open-source.
+
+---
+
+## 📋 Requisitos
+
+- [Yosys](https://yosyshq.net/yosys/)
+- [GHDL](https://ghdl.github.io/ghdl/)
+- [ghdl-yosys-plugin](https://github.com/ghdl/ghdl-yosys-plugin)
+
+---
+
+## ⚙️ Procedimentos
+
+### 🔹 full_adder
+
+```bash
+yosys -m ghdl -p 'ghdl ./src/vhdl/full_adder.vhdl -e full_adder; write_verilog full_adder.v'
+

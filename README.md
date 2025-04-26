@@ -59,8 +59,9 @@ Open the .ghw files in GTKWave to inspect the simulated signals:
 
 gtkwave ./waves/full_adder_tb.ghw
 gtkwave ./waves/adder_tb.ghw
-
 ````
+![image](https://github.com/user-attachments/assets/c603ad7f-40b7-4a49-9706-3b7941d591e9)
+
 # 🔄 2. VHDL to Verilog
 
 This document describes the process of converting a project written in VHDL to Verilog using open-source tools.

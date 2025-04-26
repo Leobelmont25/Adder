@@ -61,24 +61,53 @@ gtkwave ./waves/full_adder_tb.ghw
 gtkwave ./waves/adder_tb.ghw
 
 ````
-# 🔄 VHDL para Verilog
+# 🔄 2. VHDL to Verilog
 
-Este documento descreve o processo de conversão de um projeto escrito em VHDL para Verilog utilizando ferramentas open-source.
-
+This document describes the process of converting a project written in VHDL to Verilog using open-source tools.
 ---
 
-## 📋 Requisitos
+## 📋 Requirements
 
 - [Yosys](https://yosyshq.net/yosys/)
 - [GHDL](https://ghdl.github.io/ghdl/)
-- [ghdl-yosys-plugin](https://github.com/ghdl/ghdl-yosys-plugin)
 
 ---
 
-## ⚙️ Procedimentos
+## ⚙️ Procedures
 
 ### 🔹 full_adder
 
 ```bash
-yosys -m ghdl -p 'ghdl ./src/vhdl/full_adder.vhdl -e full_adder; write_verilog full_adder.v'
+yosys -m ghdl -p 'ghdl full_adder.vhdl -e full_adder; write_verilog full_adder.v'
+````
+### 🔹 adder
 
+```bash
+yosys -m ghdl -p 'ghdl adder.vhdl -e full_adder; write_verilog adder.v'
+````
+Projects in OpenLane have configuration files. A configuration file contains user-defined values ​​for various openlane.config.Variable parameters. With them, you control the flows. The configuration file of the adder project is config.json.
+In addition, you need to provide the pin ordering, available in the order_pin.cfg file.
+
+# 3. Checking Results in OpenLane
+## Verilog >> GDSII
+
+This document describes the process of transforming a Verilog design into a physical layout in GDSII format using the OpenLANE platform.
+
+---
+
+## 📋 Requirements
+
+- [OpenLANE](https://github.com/The-OpenROAD-Project/OpenLane)
+
+---
+
+## ⚙️ Procedures
+
+1. Make sure that the OpenLANE environment is correctly installed and configured.
+2. Copy the generated Verilog file (`.v`) to the OpenLANE design structure.
+3. Configure the project by adjusting the necessary parameters in the OpenLANE configuration files.
+4. Run the synthesis and physical implementation flow using the standard script:
+
+```bash
+openlane config.json
+openlane --last-run --flow openinopenroad config.json

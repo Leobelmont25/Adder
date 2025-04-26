@@ -60,6 +60,7 @@ Open the .ghw files in GTKWave to inspect the simulated signals:
 gtkwave ./waves/full_adder_tb.ghw
 gtkwave ./waves/adder_tb.ghw
 ````
+# Screenshot
 ![image](https://github.com/user-attachments/assets/c603ad7f-40b7-4a49-9706-3b7941d591e9)
 
 # 🔄 2. VHDL to Verilog
@@ -112,3 +113,8 @@ This document describes the process of transforming a Verilog design into a phys
 ```bash
 openlane config.json
 openlane --last-run --flow openinopenroad config.json
+````
+#Screenshot
+![image](https://github.com/user-attachments/assets/81a90054-0708-423a-aad4-51f933432e91)
+
+

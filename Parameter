@@ -1,4 +1,0 @@
-mkdir nome_da_pasta
-git add nome_da_pasta/
-git commit -m "Cria nova pasta"
-git push

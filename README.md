@@ -57,8 +57,8 @@ ghdl -r adder_tb --wave=adder_tb.ghw
 Open the .ghw files in GTKWave to inspect the simulated signals:
 ```bash
 
-gtkwave ./waves/full_adder_tb.ghw
-gtkwave ./waves/adder_tb.ghw
+gtkwave full_adder_tb.ghw
+gtkwave adder_tb.ghw
 ````
 # Screenshot
 ![image](https://github.com/user-attachments/assets/c603ad7f-40b7-4a49-9706-3b7941d591e9)
